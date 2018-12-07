@@ -3,10 +3,11 @@ import numpy as np
 plt.figure(figsize=(5, 5))
 
 # 绘制 AND(x, y) 和 0.5 * x1 + 0.5 * y = 0.7 的直线
-
+# x1s, y1s 为 (0,0), (0,1) 和 (1,0)
 x1s = (0, 0, 1)
 y1s = (0, 1, 0)
 plt.scatter(x1s, y1s, c='red', marker='o')
+# x2s, y2s 为 (1,1)
 x2s = (1,)
 y2s = (1,)
 plt.scatter(x2s, y2s, c='blue', marker='v')
