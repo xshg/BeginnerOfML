@@ -31,6 +31,11 @@ def NAND(x1, x2):
     else:
         return 1
 
+def XOR(x1, x2):
+    s1 = NAND(x1, x2)
+    s2 = OR(x1, x2)
+    y = AND(s1, s2)
+    return y
 
 for x1 in (0, 1):
     for x2 in (0, 1):
@@ -41,3 +46,6 @@ for x1 in (0, 1):
 for x1 in (0, 1):
     for x2 in (0, 1):
         print('NAND({}, {}) = {}'.format(x1, x2, NAND(x1, x2)))
+for x1 in (0, 1):
+    for x2 in (0, 1):
+        print('XOR({}, {}) = {}'.format(x1, x2, XOR(x1, x2)))
