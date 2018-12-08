@@ -1,18 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-plt.figure(figsize=(5, 5))
-def sigmod(x):
-    return 1.0 / (1 + np.exp(-x))
+# plt.figure(figsize=(5, 5))
+# plt.show()
 
-def relu(x):
-    return np.maximum(0, x)
-
-x = np.arange(-10, 10, .1)
-y = relu(x)
-print(x)
-print(y)
-plt.plot(x, y)
-plt.legend()
-plt.show()
-
+A = np.array([[1, 2],[3, 4]])
+B = np.array([[5, 6], [7, 8]])
+print(A)
+print(B)
+print(A * B)
+print(np.dot(A, B))
