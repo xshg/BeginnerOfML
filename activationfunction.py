@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 def stepFunction(x):
     return np.array(x>0, np.int)
 
-def sigmod(x):
+def sigmoid(x):
     '''
-    sigmod 激活函数 1/(1+np.exp(-x))
+    sigmoid 激活函数 1/(1+np.exp(-x))
     '''
     return 1. / (1+np.exp(-x))
 
@@ -29,8 +29,8 @@ if __name__ == "__main__":
     plt.plot(X, Ystep, c='pink', linestyle='-', label='y = stepFunc(x)')
 
     # draw sigmod
-    Ysigmod = sigmod(X)
-    plt.plot(X, Ysigmod, c='blue', linestyle='--', label='y = sigmod(x)')
+    Ysigmoid = sigmoid(X)
+    plt.plot(X, Ysigmoid, c='blue', linestyle='--', label='y = sigmoid(x)')
 
     # draw ReLU
     YReLU = ReLU(X)
