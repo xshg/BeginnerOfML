@@ -18,6 +18,26 @@ def ReLU(x):
     '''
     return np.maximum(0, x)
 
+def softmaxOverflow(a):
+    '''
+    softmax的原始版本，当参数a内值比较大时，会产生溢出错误
+    例如：a = np.array([1010, 1000, 990])
+    '''
+    exp_a = np.exp(a)
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+    return y
+
+def softmax(a):
+    '''
+    softmax的防溢出版本
+    '''
+    c = np.max(a)
+    exp_a = np.exp(a-c)
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+    return y
+
 if __name__ == "__main__":
     plt.figure(figsize=(5, 5))
     
@@ -36,4 +56,4 @@ if __name__ == "__main__":
     YReLU = ReLU(X)
     plt.plot(X, YReLU, c='green', linestyle='-.', label ='y = ReLU(x)')
     plt.legend()
-    plt.show()
+    plt.show()  
