@@ -56,4 +56,6 @@ if __name__ == "__main__":
     YReLU = ReLU(X)
     plt.plot(X, YReLU, c='green', linestyle='-.', label ='y = ReLU(x)')
     plt.legend()
-    plt.show()  
+
+
+    plt.show()

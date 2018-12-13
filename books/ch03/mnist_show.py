@@ -21,3 +21,15 @@ img = img.reshape(28, 28)  # 把图像的形状变为原来的尺寸
 print(img.shape)  # (28, 28)
 
 img_show(img)
+
+# 增加显示测试集第一个图像显示
+# by xshg, 2018年12月13日
+img = x_test[0]
+label = t_test[0]
+print(label)  # 5
+
+print(img.shape)  # (784,)
+img = img.reshape(28, 28)  # 把图像的形状变为原来的尺寸
+print(img.shape)  # (28, 28)
+
+img_show(img)
