@@ -12,6 +12,9 @@ def img_show(img):
 
 (x_train, t_train), (x_test, t_test) = load_mnist(flatten=True, normalize=False)
 
+print('Numbers of training image: {}'.format(len(x_train)))
+print('Numbers of testing image: {}'.format(len(x_test)))
+
 img = x_train[0]
 label = t_train[0]
 print(label)  # 5
