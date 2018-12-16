@@ -28,9 +28,24 @@ def softmaxOverflow(a):
     y = exp_a / sum_exp_a
     return y
 
-def softmax(a):
+def softmax(x):
+    '''
+    softmax 的防溢出版本
+    参数a 如果为2维数组也可以处理
+    '''
+    if x.ndim == 2:
+        x = x.T     # 将a转置
+        x = x - np.max(x, axis=0)   # 溢出策略
+        y = np.exp(x)/np.sum(np.exp(x), axis=0)
+        return y.T
+    x = x - np.max(x)
+    return np.exp(x)/np.sum(np.exp(x))
+
+
+def softmax_ndim1(a):
     '''
     softmax的防溢出版本
+    参数a 只能是一维数组
     '''
     c = np.max(a)
     exp_a = np.exp(a-c)
