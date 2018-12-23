@@ -1,7 +1,7 @@
 # some tmp files
 
-demo.py
-tmp.py
+demo*.py
+tmp*.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
